@@ -56,3 +56,90 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+.streamlist-page {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.streamlist-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.streamlist-form input,
+.edit-box input {
+  width: 320px;
+  padding: 10px;
+}
+
+.streamlist-form button,
+.edit-box button,
+.item-actions button {
+  padding: 10px 12px;
+}
+
+.streamlist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.item.completed .item-text {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+}
+
+.item-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.item-actions button:hover .icon {
+  filter: invert(60%) sepia(80%) saturate(400%) hue-rotate(180deg);
+}
+
+.streamlist-form button,
+.edit-box button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.streamlist-form button:hover,
+.edit-box button:hover {
+  opacity: 0.8;
+}
