@@ -15,15 +15,15 @@ export default function StreamListItem({
       <span className="item-text">{item.text}</span>
 
       <div className="item-actions">
-        <button type="button" onClick={() => onToggleComplete(item.id)}>
+        <button type="button" className="icon-btn" onClick={() => onToggleComplete(item.id)}>
         <img src={CheckIcon} alt="complete" className="icon" />
         </button>
 
-        <button type="button" onClick={() => onStartEdit(item.id, item.text)}>
+        <button type="button" className="icon-btn" onClick={() => onStartEdit(item.id, item.text)}>
         <img src={EditIcon} alt="edit" className="icon" />
         </button>
 
-        <button type="button" onClick={() => onDelete(item.id)}>
+        <button type="button" className="icon-btn" onClick={() => onDelete(item.id)}>
         <img src={DeleteIcon} alt="delete" className="icon" />
         </button>
 

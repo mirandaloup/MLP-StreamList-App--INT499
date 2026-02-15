@@ -1,3 +1,6 @@
+/*  Global style */
+
+
 body {
   margin: 0;
   background: black;
@@ -5,21 +8,18 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
 .app {
   text-align: center;
 }
-
 
 .header {
   padding: 30px 20px 10px;
 }
 
-
 .logo {
   width: 260px;
   height: auto;
-  max-width: 80vw; 
+  max-width: 80vw;
   margin: 0 auto 20px;
   display: block;
 }
@@ -42,7 +42,6 @@ body {
   text-decoration: underline;
 }
 
-
 .divider {
   width: 80%;
   margin: 0 auto 30px;
@@ -50,12 +49,43 @@ body {
   border-top: 1px solid white;
 }
 
-
 .content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
+
+
+/*  Icons */
+
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+  display: block;
+}
+
+.icon-btn:hover .icon {
+  filter: invert(60%) sepia(80%) saturate(400%) hue-rotate(180deg);
+}
+
+
+/*  Streamlist Page */
+
 
 .streamlist-page {
   max-width: 700px;
@@ -74,12 +104,6 @@ body {
 .edit-box input {
   width: 320px;
   padding: 10px;
-}
-
-.streamlist-form button,
-.edit-box button,
-.item-actions button {
-  padding: 10px 12px;
 }
 
 .streamlist-list {
@@ -115,47 +139,167 @@ body {
   margin-bottom: 20px;
 }
 
-.icon {
-  width: 22px;
-  height: 22px;
-  filter: invert(1);
+
+/*  Cart Page */
+
+.cart {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.item-actions button {
+
+/*  Movie Search Page */
+
+.movies-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.movies-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.movies-form input {
+  width: 380px;
+  padding: 10px;
+}
+
+.movies-search-btn {
   background: none;
-  border: none;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 14px;
   cursor: pointer;
 }
 
-.item-actions button:hover .icon {
-  filter: invert(60%) sepia(80%) saturate(400%) hue-rotate(180deg);
+.movies-search-btn:hover {
+  opacity: 0.85;
 }
 
-.streamlist-form button,
-.edit-box button {
+
+/*  Movie Search Grid  */
+
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.movie-tile {
   background: none;
-  border: none;
-  padding: 8px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
   cursor: pointer;
+  text-align: left;
+  color: white;
+  transition: 0.2s ease;
 }
 
-.streamlist-form button:hover,
-.edit-box button:hover {
+.movie-tile:hover {
+  opacity: 0.9;
+}
+
+.movie-tile-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.movie-tile-poster.placeholder {
+  border: 1px solid white;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  opacity: 0.7;
+}
+
+.movie-tile-text {
+  margin-top: 8px;
+}
+
+.movie-tile-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.movie-tile-sub {
+  margin-top: 4px;
+  opacity: 0.85;
+  font-size: 12px;
+}
+
+
+/*  Movie Details Page */
+
+.movie-detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
+
+.movie-detail-card {
+  display: flex;
+  gap: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.movie-detail-poster {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.movie-detail-info {
+  flex: 1;
+}
+
+.movie-detail-title {
+  margin: 0;
+}
+
+.movie-detail-meta {
+  margin: 10px 0;
+  opacity: 0.85;
+}
+
+.movie-detail-overview {
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.movies-hint {
+  margin-top: 20px;
   opacity: 0.8;
 }
 
-.cart button {
-  background: none;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.cart button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.tmdb-attribution {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
-.cart button:hover .icon {
-  filter: invert(60%) sepia(80%) saturate(400%) hue-rotate(180deg);
+.error {
+  color: #ff6b6b;
 }

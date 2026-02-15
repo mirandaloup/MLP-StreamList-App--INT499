@@ -12,11 +12,11 @@ export default function CartItem({ item, onIncrease, onDecrease, onRemove }) {
       </div>
 
       <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-        <button type ="button" onClick={() => onDecrease(item.id)} disabled={item.quantity <= 1}>
+        <button type ="button" className="icon-btn" onClick={() => onDecrease(item.id)} disabled={item.quantity <= 1}>
         <img src={DecreaseIcon} alt="Decrease" className="icon" />
         </button>
         <span>{item.quantity}</span>
-        <button onClick={() => onIncrease(item.id)}>
+        <button className="icon-btn" onClick={() => onIncrease(item.id)}>
         <img src={IncreaseIcon} alt="Increase" className="icon" />
         </button>
       </div>
@@ -25,7 +25,7 @@ export default function CartItem({ item, onIncrease, onDecrease, onRemove }) {
         ${(item.price * item.quantity).toFixed(2)}
       </div>
 
-      <button onClick={() => onRemove(item.id)}>
+      <button className="icon-btn" onClick={() => onRemove(item.id)}>
         <img src={CancelIcon} alt="cancel" className="icon" />
       </button>
     </div>

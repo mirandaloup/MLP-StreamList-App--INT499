@@ -80,7 +80,7 @@ export default function StreamList() {
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter a movie"
         />
-        <button type="submit">
+        <button type="submit" className="icon-btn">
           <img src={AddIcon} alt="add" className="icon" />
           </button>
       </form>
@@ -93,11 +93,11 @@ export default function StreamList() {
             onChange={(e) => setEditText(e.target.value)}
             placeholder="Edit title"
           />
-          <button type="button" onClick={saveEdit}>
+          <button type="button" className="icon-btn" onClick={saveEdit}>
           <img src={SaveIcon} alt="save" className="icon" />
           </button>
 
-          <button type="button" onClick={cancelEdit}>
+          <button type="button" className="icon-btn" onClick={cancelEdit}>
           <img src={CancelIcon} alt="cancel" className="icon" />
           </button>
         </div>
@@ -105,7 +105,7 @@ export default function StreamList() {
 
 
       {items.length === 0 ? (
-        <p>List Empty.</p>
+        <p>Start adding movies to your list!</p>
       ) : (
         <ul className="streamlist-list">
           {items.map((item) => (

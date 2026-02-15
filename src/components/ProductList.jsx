@@ -11,7 +11,7 @@ export default function ProductList({ products, onAddToCart }) {
           <span>
             {product.name} - ${product.price.toFixed(2)}
           </span>
-          <button
+          <button className="icon-btn"
             style={{ marginLeft: "10px" }}
             onClick={() => onAddToCart(product)}
           >
