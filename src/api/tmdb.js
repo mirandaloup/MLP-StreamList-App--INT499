@@ -1,7 +1,8 @@
 const TMDB_BASE = "https://api.themoviedb.org/3";
-
+//week 4 AI suggested updates: updated to throw error if token is missing
 export async function searchMovies(query) {
   const token = process.env.REACT_APP_TMDB_TOKEN;
+  if (!token) throw new Error("Missing REACT_APP_TMDB_TOKEN");
 
   const url =
     TMDB_BASE +

@@ -3,8 +3,8 @@ import ProductList from "../components/ProductList";
 import Cart from "../components/Cart";
 import products from "../components/SubscriptionData";
 
-
-export default function App() {
+//week 4 AI suggested updates: updated export function from app to CartPage
+export default function CartPage() {
   const [cart, setCart] = useState(() => {
     try {
       const stored = localStorage.getItem("cart");

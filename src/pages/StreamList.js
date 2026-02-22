@@ -5,11 +5,16 @@ import AddIcon from "../icons/add.svg";
 import SaveIcon from "../icons/save.svg";
 import CancelIcon from "../icons/cancel.svg";
 
+//week 4 AI suggested updates: updated to catch errors
 export default function StreamList() {
   const [title, setTitle] = useState("");
   const [items, setItems] = useState(() => {
-    const saved = localStorage.getItem("streamlist_items");
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem("streamlist_items");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
   });
 
   const [editingId, setEditingId] = useState(null);
@@ -25,8 +30,9 @@ export default function StreamList() {
     const trimmed = title.trim();
     if (!trimmed) return;
 
+    //week 4 AI suggested updates: updated to randomUUID to avoid collides
     const newItem = {
-      id: Date.now(),
+      id: crypto.randomUUID(),
       text: trimmed,
       completed: false,
     };

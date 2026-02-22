@@ -1,3 +1,4 @@
+//week 4 AI suggested updates: renamed to eventually delete
 import logo from './logo.svg';
 import './App.css';
 
