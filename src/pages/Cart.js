@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductList from "../components/ProductList";
 import Cart from "../components/Cart";
@@ -5,6 +6,7 @@ import products from "../components/SubscriptionData";
 
 //week 4 AI suggested updates: updated export function from app to CartPage
 export default function CartPage() {
+  const navigate = useNavigate();
   const [cart, setCart] = useState(() => {
     try {
       const stored = localStorage.getItem("cart");
@@ -61,6 +63,16 @@ export default function CartPage() {
   return (
     <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "24px" }}>
       <h2>StreamList Cart System</h2>
+
+      <div style={{ marginBottom: "16px", display: "flex", gap: "12px" }}>
+        <button
+          type="button"
+          onClick={() => navigate("/checkout")}
+          disabled={cart.length === 0}
+        >
+          Proceed to Checkout
+        </button>
+      </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px" }}>
         <ProductList products={products} onAddToCart={addToCart} />
