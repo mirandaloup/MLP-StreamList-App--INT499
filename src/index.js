@@ -6,6 +6,8 @@ import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import { router } from "./router";
 import reportWebVitals from "./reportWebVitals";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,5 +15,7 @@ root.render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+serviceWorkerRegistration.register();
 
 reportWebVitals();
